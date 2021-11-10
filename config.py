@@ -26,7 +26,7 @@ class ProductionConfig(Config):
     DB_PORT = environ.get("DB_PORT", "5432")
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_DATABASE_URI = (
-        f"postgres://zpelobskvavivq:ce25c80e421910ecf6b50bc029334514ec803cf172360407b4bcd8e154a8c6f6@ec2-3-229-166-245.compute-1.amazonaws.com:5432/ddk8iuo2v4lcqv"
+        f"postgresql+psycopg2://zpelobskvavivq:ce25c80e421910ecf6b50bc029334514ec803cf172360407b4bcd8e154a8c6f6@ec2-3-229-166-245.compute-1.amazonaws.com:5432/ddk8iuo2v4lcqv"
     )
 
 class DevelopmentConfig(Config):
@@ -36,10 +36,11 @@ class DevelopmentConfig(Config):
     DB_USER = environ.get("DB_USER", "MY_DB_USER")
     DB_PASS = environ.get("DB_PASS", "MY_DB_PASS")
     DB_NAME = environ.get("DB_NAME", "MY_DB_NAME")
-    DB_PORT = environ.get("DB_PORT", "3306")
+    DB_PORT = environ.get("DB_PORT", "5432")
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_DATABASE_URI = (
-        f"mysql+pymysql://{DB_USER}:{DB_PASS}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
+        f"postgresql+psycopg2://{DB_USER}:{DB_PASS}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
+        
     )
     # sqlalchemy no usa por defecto pymysql, agregando estas sentencias, yo le digo que se conecte a mi base de datos
 
