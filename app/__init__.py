@@ -19,7 +19,7 @@ logging.basicConfig()  # logging basico para ver querys que ejecuta mi app
 logging.getLogger("sqlalchemy.engine").setLevel(logging.INFO)
 
 
-app=create_app()
+
 
 
 def create_app(environment="development"):
@@ -117,3 +117,5 @@ def create_app(environment="development"):
 
     # Retornar la instancia de app configurada
     return app
+
+app=create_app()
