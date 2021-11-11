@@ -26,7 +26,7 @@ class ProductionConfig(Config):
     DB_PORT = environ.get("DB_PORT", "5432")
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_DATABASE_URI = (
-        f"postgres: // zpelobskvavivq : ce25c80e421910ecf6b50bc029334514ec803cf172360407b4bcd8e154a8c6f6 @ ec2-3-229-166-245.compute-1.amazonaws.com : 5432 / ddk8iuo2v4lcqv"
+        f"postgres://zpelobskvavivq:ce25c80e421910ecf6b50bc029334514ec803cf172360407b4bcd8e154a8c6f6@ec2-3-229-166-245.compute-1.amazonaws.com:5432/ddk8iuo2v4lcqv"
     )
 
 class DevelopmentConfig(Config):
