@@ -17,11 +17,11 @@ import logging
 
 logging.basicConfig()  # logging basico para ver querys que ejecuta mi app
 logging.getLogger("sqlalchemy.engine").setLevel(logging.INFO)
-
+app = Flask(__name__)
 
 def create_app(environment="development"):
     # Configuración inicial de la app
-    app = Flask(__name__)
+    #app = Flask(__name__)
 
     # Carga de la configuración
     env = environ.get("FLASK_ENV", environment)
