@@ -19,10 +19,13 @@ logging.basicConfig()  # logging basico para ver querys que ejecuta mi app
 logging.getLogger("sqlalchemy.engine").setLevel(logging.INFO)
 
 
+
+
+
 def create_app(environment="development"):
     # Configuración inicial de la app
     app = Flask(__name__)
-
+    
     # Carga de la configuración
     env = environ.get("FLASK_ENV", environment)
     app.config.from_object(config[env])
@@ -114,3 +117,5 @@ def create_app(environment="development"):
 
     # Retornar la instancia de app configurada
     return app
+
+app=create_app()
